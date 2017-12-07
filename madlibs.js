@@ -1,0 +1,26 @@
+var questions = 3;
+var questionsLeft = ' [' + questions + ' questions left]';
+var adjective = prompt('Please type an adjective' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var verb = prompt('Please type a verb that does not end in -ing ' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var noun = prompt('Please type a plural noun' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var city = prompt('please type a city' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var name1 = prompt('please type a first name' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var name2 = prompt('please type another first name' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+alert('All done. Ready for the message?');
+var sentence = "<h2>Once upon a time there were two " + noun;
+sentence += ' police officers from ' + city + '.';
+sentence += ' There names were ' + name1 + ' and ' + name2 + '.';
+sentence += ' '
+document.write(sentence);
