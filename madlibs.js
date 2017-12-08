@@ -25,6 +25,21 @@ var plurNoun = prompt('please type a plural noun' + questionsLeft);
 questions -= 1;
 questionsLeft = ' [' + questions + ' questions left]';
 var adverb = prompt('please type an adverb' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var toy = prompt('please type the name of a toy' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var animal = prompt('please type the name of an animal' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var verb2 = prompt('please type a verb' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var number = prompt('please type a verb' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var adjective2 = prompt('please type an adjective' + questionsLeft);
 alert('All done. Ready for the message?');
 var sentence = "<h2>Once upon a time there were two " + adjective;
 sentence += ' police officers who ' + verb + ' in '+ city + '.';
@@ -34,6 +49,10 @@ sentence += ' We want you to figure out who did it.'
 sentence += ' As quickly as they could, they got into their ' + car + ' and headed for the store.'
 sentence += ' As luck would have it, the resident expert on ' + plurNoun + ' was already on the scene.'
 sentence += ' "What have you got?" the two men said ' + adverb + '.';
-sentence += ' '
+sentence += ' The man responded by saying, "I think I know who did this." He picked up a small ' + toy + '.'
+sentence += ' This is the calling card of the ' + animal + ' gang. There seems to be fingerprints on it too.'
+sentence += ' "Run the prints, and we will bring in whoever they match to." Says one of the officers.'
+sentence += ' "Lets ' + verb2 + '" Said the other officer. Within ' + number + ' minutes the suspect was in custody.'
+sentence += ' "Another ' + adjective2 + ' day" The officers said in unison.'
 
 document.write(sentence);
