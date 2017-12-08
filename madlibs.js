@@ -1,12 +1,9 @@
-var questions = 3;
+var questions = 6;
 var questionsLeft = ' [' + questions + ' questions left]';
 var adjective = prompt('Please type an adjective' + questionsLeft);
 questions -= 1;
 questionsLeft = ' [' + questions + ' questions left]';
-var verb = prompt('Please type a verb that does not end in -ing ' + questionsLeft);
-questions -= 1;
-questionsLeft = ' [' + questions + ' questions left]';
-var noun = prompt('Please type a plural noun' + questionsLeft);
+var verb = prompt('Please type a verb in past tense' + questionsLeft);
 questions -= 1;
 questionsLeft = ' [' + questions + ' questions left]';
 var city = prompt('please type a city' + questionsLeft);
@@ -17,10 +14,26 @@ questions -= 1;
 questionsLeft = ' [' + questions + ' questions left]';
 var name2 = prompt('please type another first name' + questionsLeft);
 questions -= 1;
+questionsLeft = ' [ ' + questions + ' questions left]'
+var store = prompt('please type a store name' + questionsLeft);
+questions -= 1;
 questionsLeft = ' [' + questions + ' questions left]';
+var car = prompt('please type a car brand' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var plurNoun = prompt('please type a plural noun' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var adverb = prompt('please type an adverb' + questionsLeft);
 alert('All done. Ready for the message?');
-var sentence = "<h2>Once upon a time there were two " + noun;
-sentence += ' police officers from ' + city + '.';
+var sentence = "<h2>Once upon a time there were two " + adjective;
+sentence += ' police officers who ' + verb + ' in '+ city + '.';
 sentence += ' There names were ' + name1 + ' and ' + name2 + '.';
+sentence += ' One day, there captain came to them and said, "Someone has stolen from' + store + '."';
+sentence += ' We want you to figure out who did it.'
+sentence += ' As quickly as they could, they got into their ' + car + ' and headed for the store.'
+sentence += ' As luck would have it, the resident expert on ' + plurNoun + ' was already on the scene.'
+sentence += ' "What have you got?" the two men said ' + adverb + '.';
 sentence += ' '
+
 document.write(sentence);
