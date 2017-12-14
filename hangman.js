@@ -8,7 +8,7 @@ window.onload = function () {
       var chosenCategory;     // Selected catagory
       var getHint ;          // Word getHint
       var word ;              // Selected word
-      var guess ;             // Geuss
+      var guess ;             // Guess
       var geusses = [ ];      // Stored geusses
       var lives ;             // Lives
       var counter ;           // Count correct geusses
