@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<title>Dots and Boxes: James Colannino</title>
+
+		<link rel="stylesheet" type="text/css" href="css/dotsandboxes.css">
+
+		<script src="js/vertex.js"></script>
+		<script src="js/line.js"></script>
+		<script src="js/square.js"></script>
+		<script src="js/board.js"></script>
+		<script src="js/game.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="game-display">
+
+			<h2>Dots and Boxes</h2>
+			<h4 id="current-player-display" style="display: none;">
+				Current player:
+				<span id="player-name"></span>
+			</h4>
+			<h4 id="winner-display" style="display: none;">
+				<span id="winner-name"></span> wins!
+			</h4>
+
+			<svg id="gameboard" height="600" width="600"></svg>
+
+		</div>
+
+		<script>
+
+			var game = new Game({
+
+				width: 10,
+				height: 10,
+				numPlayers: 2,
+				boardId: 'gameboard',
+
+				/**********************************************************/
+
+				// function to get a player's data is defined externally so
+				// that the game object can be easily ported between applications
+				// (that is, if you really like my implementation that much...)
+				getPlayerData: function (playerNum) {
+
+					/*** ATTENTION:
+					I WAS GOING TO PROMPT FOR THE USER'S NAME, BUT IT WASN'T
+					MENTIONED IN THE DIRECTIONS, AND I WANTED TO ADHERE AS
+					STRICTLY AS POSSIBLE TO THE REQUIREMENTS.
+					var player = {
+						name: prompt("Enter player #" + playerNum + "'s name: "),
+					};
+					***/
+
+					var player = {};
+
+					switch (playerNum) {
+
+						case 1:
+							player.name = 'Red';
+							break;
+
+						case 2:
+							player.name = 'Blue';
+							break;
+
+						default:
+							player.name = 'John Doe';
+							break;
+					}
+
+					return player;
+				},
+
+				/**********************************************************/
+
+				// Callback that displays the current player.
+				displayCurrentPlayer: function (player) {
+
+					var playerName = document.getElementById('player-name');
+
+					playerName.setAttribute('style', 'color: ' + player.color + ';');
+					playerName.textContent = player.name;
+
+					document.getElementById('current-player-display').setAttribute('style', 'display: block;');
+				},
+
+				/**********************************************************/
+
+				// Callback that announces the winner.
+				displayWinner: function (player) {
+
+					// hide current player label
+					document.getElementById('current-player-display').setAttribute('style', 'display: none;');
+
+					// set and display winner
+					var winnerName = document.getElementById('winner-name');
+					winnerName.setAttribute('style', 'color: ' + player.color + ';');
+					winnerName.textContent = player.name;
+					document.getElementById('winner-display').setAttribute('style', 'display: block;');
+				},
+
+				/**********************************************************/
+
+				// Callback that announces a tie. The Game object supports
+				// an arbitrary number of players, but this callback is
+				// written specifically for two players.
+				displayTie: function (players) {
+
+					// hide current player label
+					document.getElementById('current-player-display').setAttribute('style', 'display: none;');
+
+					// set and display tie message
+					document.getElementById('winner-display').innerHTML = 'Ah, shucks... Looks like it was a tie!';
+					document.getElementById('winner-display').setAttribute('style', 'display: block;');
+				}
+			});
+
+			game.start();
+
+		</script>
+
+	</body>
+
+</html>
+
