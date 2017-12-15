@@ -1,0 +1,12 @@
+body{
+    background: orange;
+}
+
+.container{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+    border-radius: 2em;
+    background: white;
+}
