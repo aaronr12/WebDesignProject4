@@ -9,9 +9,9 @@ window.onload = function () {
       var getHint ;          // Word getHint
       var word ;              // Selected word
       var guess ;             // Guess
-      var geusses = [ ];      // Stored geusses
+      var guesses = [ ];      // Stored guesses
       var lives ;             // Lives
-      var counter ;           // Count correct geusses
+      var counter ;           // Count correct guesses
       var space;              // Number of spaces in word '-'
     
       // Get elements
@@ -42,15 +42,15 @@ window.onload = function () {
       // Select Catagory
       var selectCat = function () {
         if (chosenCategory === categories[0]) {
-          catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+          catagoryName.innerHTML = "The Chosen Category Is Baseball Teams";
         } else if (chosenCategory === categories[1]) {
           catagoryName.innerHTML = "The Chosen Category Is Films";
         } else if (chosenCategory === categories[2]) {
-          catagoryName.innerHTML = "The Chosen Category Is Cities";
+          catagoryName.innerHTML = "The Chosen Category Is Bands";
         }
       }
     
-      // Create geusses ul
+      // Create guesses ul
        result = function () {
         wordHolder = document.getElementById('hold');
         correct = document.createElement('ul');
@@ -66,7 +66,7 @@ window.onload = function () {
             guess.innerHTML = "_";
           }
     
-          geusses.push(guess);
+          guesses.push(guess);
           wordHolder.appendChild(correct);
           correct.appendChild(guess);
         }
@@ -78,8 +78,8 @@ window.onload = function () {
         if (lives < 1) {
           showLives.innerHTML = "Game Over";
         }
-        for (var i = 0; i < geusses.length; i++) {
-          if (counter + space === geusses.length) {
+        for (var i = 0; i < guesses.length; i++) {
+          if (counter + space === guesses.length) {
             showLives.innerHTML = "You Win!";
           }
         }
@@ -93,7 +93,7 @@ window.onload = function () {
     
       
        // Hangman
-      canvas =  function(){
+      canvas = function(){
     
         myStickman = document.getElementById("stickman");
         context = myStickman.getContext('2d');
@@ -159,16 +159,16 @@ window.onload = function () {
       // OnClick Function
        check = function () {
         list.onclick = function () {
-          var geuss = (this.innerHTML);
+          var guess = (this.innerHTML);
           this.setAttribute("class", "active");
           this.onclick = null;
           for (var i = 0; i < word.length; i++) {
-            if (word[i] === geuss) {
-              geusses[i].innerHTML = geuss;
+            if (word[i] === guess) {
+              guesses[i].innerHTML = guess;
               counter += 1;
             } 
           }
-          var j = (word.indexOf(geuss));
+          var j = (word.indexOf(guess));
           if (j === -1) {
             lives -= 1;
             comments();
@@ -183,9 +183,9 @@ window.onload = function () {
       // Play
       play = function () {
         categories = [
-            ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
+            ["yankees", "red-sox", "mets", "braves", "orioles", "white-sox", "twins"],
             ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-            ["manchester", "milan", "madrid", "amsterdam", "prague"]
+            ["nirvana", "lynyrd-skynyrd", "foo-fighters", "beatles", "blue-oyster-cult"]
         ];
     
         chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -194,7 +194,7 @@ window.onload = function () {
         console.log(word);
         buttons();
     
-        geusses = [ ];
+        guesses = [ ];
         lives = 10;
         counter = 0;
         space = 0;
@@ -211,9 +211,9 @@ window.onload = function () {
         hint.onclick = function() {
     
           hints = [
-            ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-            ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-            ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+            ["New York", "Boston", "New York", "Atlanta", "Baltimore", "Chicago", "Minnesota"],
+            ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Animated Fish", "Giant great white shark"],
+            ["In Bloom", "Sweet Home Alabama", "Learn to Fly", "Strawberry Fields Forever", "Don't Fear the Reaper"]
         ];
     
         var catagoryIndex = categories.indexOf(chosenCategory);

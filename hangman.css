@@ -1,7 +1,7 @@
 /* Variabes */
 /* Mixin's */
 body {
-  background: #c1d72e;
+  background: orange;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
   height: 100%;
@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
 }
 
-.wrappper:after {
+.wrapper:after {
   content: "";
   display: table;
   clear: both;

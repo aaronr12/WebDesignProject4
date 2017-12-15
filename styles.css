@@ -19,6 +19,10 @@ html{
     order: -1;
 }
 
+a{
+    width: 30%;
+}
+
 #box1, #box3{
     padding: 1em;
     width: 40%;
