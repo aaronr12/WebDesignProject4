@@ -1,27 +1,3 @@
-/**
- * Game --
- * Main entrypoint to the "Dots and Boxes" game. Provides public methods to
- * start a game and to complete a turn (the latter is ordinarily called by a
- * Line's onclick event handler.) Game handles scoring and interfaces with the
- * UI via user-defined callbacks.
- *
- * Constructor Input:
- *   - An object containing configuration information for the game. Some are
- *     required and some are optional. The following options can be set:
- *
- *     width (required) - number of squares in the horizontal direction
- *     height (required) - number of squares in the vertical direction
- *     numPlayers (required) - number of players in the game
- *     boardId (required) - HTML ID of the gameboard's SVG element
- *     getPlayerData (required) - user-defined callback that retrieves information
- *                                about each player
- *     displayCurrentPlayer (optional) - user-defined callback that displays the
- *                                       current player
- *     displayWinner (optional) - user-defined callback that displays the winner
- *                                when the game ends (if there is a winner)
- *     displayTie (optional) - user-defined callback that displays the results of
- *                             a tie
- */
 function Game(options) {
 
 	// Private: Represents players in the game.
@@ -94,19 +70,6 @@ function Game(options) {
 	}
 
 	board = new Board(this, options.boardId, options.width, options.height);
-
-	/*************************************************************************/
-
-	/**
-	 * Private: This function generates vibrant, "evenly spaced" colours (i.e.
-	 * no clustering). This is ideal for creating easily distinguishable vibrant
-	 * markers in Google Maps and other apps.
-	 * Adam Cole, 2011-Sept-14
-	 * HSV to RBG adapted from:
-	 * http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript
-	 * And I (James Colannino) stole this from:
-	 * http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript
-	 */
 	var getPlayerColor = function (numOfSteps, step) {
 
 		var r, g, b;
